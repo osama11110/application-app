@@ -1,0 +1,11 @@
+2026-05-06 02:08:43,814 [INFO] cv_parser: Loading cached CV parse
+2026-05-06 02:09:05,986 [WARNING] main: playwright-stealth not installed — running without stealth
+2026-05-06 02:09:06,176 [WARNING] sites.karriere_at: karriere.at: no credentials configured
+2026-05-06 02:09:06,178 [WARNING] sites.stepstone_at: stepstone.at: no credentials
+2026-05-06 02:09:06,179 [WARNING] sites.jobs_at: jobs.at: no credentials
+2026-05-06 02:09:06,180 [WARNING] sites.indeed_at: indeed: no credentials
+2026-05-06 02:09:06,181 [WARNING] sites.linkedin: LinkedIn: no credentials configured
+2026-05-06 02:09:06,181 [WARNING] sites.willhaben_at: willhaben: no credentials
+2026-05-06 02:09:06,183 [WARNING] sites.hokify_at: hokify: no credentials
+2026-05-06 02:09:06,184 [WARNING] sites.xing: xing: no credentials
+2026-05-06 02:09:06,185 [INFO] main: Skipping monster (disabled in config)

@@ -1,0 +1,3 @@
+2026-05-06 02:05:43,653 [INFO] cv_parser: Parsing CV: cv/cv.pdf
+2026-05-06 02:06:12,771 [INFO] httpx: HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-06 02:06:12,824 [INFO] cv_parser: CV parsed -> Muhammad Osama Malik | 35 skills | 12 search titles

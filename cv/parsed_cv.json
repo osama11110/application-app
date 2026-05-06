@@ -1,0 +1,169 @@
+{
+  "personal": {
+    "name": "Muhammad Osama Malik",
+    "first_name": "Muhammad Osama",
+    "last_name": "Malik",
+    "email": "osamamalik1111@gmail.com",
+    "phone": "+43 68184281193",
+    "address": "",
+    "city": "Wien",
+    "country": "Austria",
+    "linkedin": "LinkedIn",
+    "website": "",
+    "github": ""
+  },
+  "summary": "Vienna-based Full Stack Developer and M.Sc. Computer Science candidate at the University of Vienna, with 3+ years of commercial experience building cloud-native applications across Europe and internationally. Specialist in Angular, Node.js, and AWS/Azure. Proven track record in international organisations in Vienna, including the European Health Forum Gastein, with deep familiarity with GDPR, European data standards, and Austrian workplace culture. Currently architecting an accessibility platform for users with cognitive disabilities as part of a Master's thesis at INDEPENDO Wien.",
+  "skills": [
+    "Python",
+    "JavaScript (ES6+)",
+    "C++",
+    "HTML5",
+    "CSS3",
+    "Angular",
+    "Angular Material",
+    "Bootstrap",
+    "TYPO3",
+    "WordPress",
+    "Node.js",
+    "Express.js",
+    "Capacitor.js",
+    "REST APIs",
+    "AWS (EC2, Lambda, DynamoDB)",
+    "Microsoft Azure",
+    "GCP",
+    "Docker",
+    "Git/GitHub",
+    "PostgreSQL",
+    "MySQL",
+    "MongoDB",
+    "DynamoDB",
+    "M365 (Intune, Entra ID, SharePoint, Teams)",
+    "ServiceNow",
+    "ITIL",
+    "Jira",
+    "Figma",
+    "Insomnia",
+    "Linux",
+    "Windows",
+    "macOS",
+    "GDPR Compliance",
+    "SDLC",
+    "Cloud Infrastructure Management"
+  ],
+  "languages": [
+    {
+      "language": "English",
+      "level": "C1/C2"
+    },
+    {
+      "language": "German",
+      "level": "A2"
+    }
+  ],
+  "experience": [
+    {
+      "title": "Full Stack Developer – Master's Thesis",
+      "company": "INDEPENDO",
+      "location": "Wien, Austria",
+      "start": "2025-04",
+      "end": "Present",
+      "description": "Leading development of a cross-platform accessibility platform (Angular + Node.js + Capacitor.js) for users with cognitive disabilities, currently in active co-design phase with patients and caregivers. Conducting structured workshops with patients to translate real-world accessibility needs into technical requirements, directly shaping product architecture and UX decisions. Designed a GDPR-compliant PostgreSQL/MongoDB data layer handling sensitive personal health data, built to European health data standards from the ground up. Driving the full SDLC — from Figma prototyping and stakeholder workshops through to iterative development — ensuring the product reflects the lived experience of end users before launch."
+    },
+    {
+      "title": "IT Administrator",
+      "company": "European Health Forum Gastein",
+      "location": "Wien, Austria",
+      "start": "2024-03",
+      "end": "2024-11",
+      "description": "Managed year-round hybrid cloud infrastructure across AWS and Microsoft Azure for an international health policy organisation, maintaining stable operations across day-to-day work and a large annual conference with 200+ attendees. Administered Microsoft 365 (Entra ID, Intune, SharePoint, Teams) for the organisation's staff, managing identity, device enrolment, and access controls throughout the year. Built automated onboarding and offboarding workflows to reduce manual IT effort and keep access permissions clean across the organisation. Handled security incidents and operational issues as they arose, keeping systems reliable in the lead-up to and during the flagship conference."
+    },
+    {
+      "title": "Full Stack Developer",
+      "company": "Protovoid Technologies",
+      "location": "Islamabad, Pakistan",
+      "start": "2022-05",
+      "end": "2023-02",
+      "description": "Built and maintained frontend interfaces for e-commerce clients using Angular and Bootstrap, working both directly with clients on requirements and alongside a project manager depending on the engagement. Developed backend services in Node.js with SQL and NoSQL databases to support product catalogues, user accounts, and order flows for retail web applications. Customised WordPress storefronts and integrated third-party plugins to match client branding and functionality requirements, handling end-to-end delivery on smaller projects independently."
+    },
+    {
+      "title": "Full Stack Developer",
+      "company": "Slosh AI",
+      "location": "Islamabad, Pakistan",
+      "start": "2021-10",
+      "end": "2022-04",
+      "description": "Built the full-stack dashboard for a medical AI product that detects COVID-19 and pneumonia from chest X-rays in DICOM format, handling both the frontend interface and the backend that served the ML model's results to clinicians. Integrated a trained ML model (developed by the in-house ML team) into the clinical dashboard, connecting model inference outputs to a readable, actionable UI for medical users. Worked on a second product focused on early-stage cancer detection, building the dashboard layer that displayed results from medical imaging data. Collaborated closely with the ML team throughout — translating model outputs into frontend logic and ensuring the backend API handled DICOM file ingestion correctly."
+    }
+  ],
+  "education": [
+    {
+      "degree": "M.Sc.",
+      "field": "Computer Science",
+      "institution": "University of Vienna",
+      "location": "Wien, Austria",
+      "start": "",
+      "end": "2026"
+    },
+    {
+      "degree": "B.Sc.",
+      "field": "Computer Science",
+      "institution": "COMSATS University Islamabad",
+      "location": "Islamabad, Pakistan",
+      "start": "",
+      "end": "2020"
+    }
+  ],
+  "certifications": [],
+  "job_titles_to_search": [
+    "Full Stack Developer",
+    "Software Engineer",
+    "Frontend Developer (Angular)",
+    "Backend Developer (Node.js)",
+    "Cloud Engineer",
+    "IT Administrator",
+    "DevOps Engineer",
+    "Web Application Developer",
+    "Software Developer (AWS/Azure)",
+    "Accessibility Software Developer",
+    "Healthcare IT Developer",
+    "Junior Software Architect"
+  ],
+  "keywords": [
+    "Angular",
+    "Node.js",
+    "Full Stack Development",
+    "AWS",
+    "Microsoft Azure",
+    "REST API",
+    "PostgreSQL",
+    "MongoDB",
+    "Docker",
+    "GDPR",
+    "Cloud Infrastructure",
+    "IT Administration",
+    "Microsoft 365",
+    "Entra ID",
+    "Intune",
+    "SharePoint",
+    "JavaScript",
+    "Python",
+    "Express.js",
+    "Capacitor.js",
+    "Bootstrap",
+    "WordPress",
+    "Agile",
+    "Figma",
+    "SDLC",
+    "ITIL",
+    "ServiceNow",
+    "DynamoDB",
+    "DevOps",
+    "Accessibility",
+    "Health IT",
+    "DICOM",
+    "Cross-platform Development",
+    "GCP",
+    "Hybrid Cloud"
+  ],
+  "salary_expectation": "€50,000 - €65,000",
+  "work_permit": "Requires work permit (non-EU national residing in Austria)"
+}
