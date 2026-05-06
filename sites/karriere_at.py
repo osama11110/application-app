@@ -15,8 +15,13 @@ class KarriereAt(BaseSite):
         email = self.creds.get("email", "")
         password = self.creds.get("password", "")
         if not email or not password:
-            logger.warning("karriere.at: no credentials configured")
-            return False
+            if await self.check_already_logged_in(
+                "https://www.karriere.at",
+                '[data-testid="userMenu"], .m-headerLoggedIn, a[href*="/profil"]'
+            ):
+                logger.info("karriere.at: already logged in via saved session")
+                return True
+            return await self.manual_login(self.LOGIN_URL)
 
         await self.page.goto(self.LOGIN_URL, wait_until="domcontentloaded")
         await self.delay()
@@ -138,6 +143,10 @@ class KarriereAt(BaseSite):
         await self.page.wait_for_load_state("domcontentloaded")
         await self.delay()
         await self.wait_for_captcha()
+
+        # Check if redirected to company career portal
+        if await self.try_external_apply("karriere.at", job, cover_letter):
+            return True
 
         # Handle multi-step form
         # Step: upload CV

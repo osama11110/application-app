@@ -15,8 +15,13 @@ class IndeedAt(BaseSite):
         email = self.creds.get("email", "")
         password = self.creds.get("password", "")
         if not email or not password:
-            logger.warning("indeed: no credentials")
-            return False
+            if await self.check_already_logged_in(
+                "https://at.indeed.com",
+                '#UserOptionsDropdownBtn, [data-testid="UserDropdown"], a[href*="/account"]'
+            ):
+                logger.info("indeed: already logged in via saved session")
+                return True
+            return await self.manual_login(self.LOGIN_URL)
 
         await self.page.goto(self.LOGIN_URL, wait_until="domcontentloaded")
         await self.delay()
@@ -118,6 +123,9 @@ class IndeedAt(BaseSite):
         await self.page.wait_for_load_state("domcontentloaded")
         await self.delay()
         await self.wait_for_captcha()
+
+        if await self.try_external_apply("indeed.com", job, cover_letter):
+            return True
 
         # Indeed uses multi-step inline form
         for _ in range(6):

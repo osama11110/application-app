@@ -7,15 +7,17 @@ from .willhaben_at import WillhabenAt
 from .hokify_at import HokifyAt
 from .xing import Xing
 from .monster_at import MonsterAt
+from .devjobs_at import DevJobsAt
 
 SITE_MAP = {
-    "karriere_at": KarriereAt,
+    "karriere_at":  KarriereAt,
     "stepstone_at": StepstoneAt,
-    "jobs_at": JobsAt,
-    "indeed": IndeedAt,
-    "linkedin": LinkedIn,
-    "willhaben": WillhabenAt,
-    "hokify": HokifyAt,
-    "xing": Xing,
-    "monster": MonsterAt,
+    "jobs_at":      JobsAt,
+    "indeed":       IndeedAt,
+    "linkedin":     LinkedIn,
+    "willhaben":    WillhabenAt,
+    "hokify":       HokifyAt,
+    "xing":         Xing,
+    "monster":      MonsterAt,
+    "devjobs_at":   DevJobsAt,
 }

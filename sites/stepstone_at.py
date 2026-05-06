@@ -15,8 +15,13 @@ class StepstoneAt(BaseSite):
         email = self.creds.get("email", "")
         password = self.creds.get("password", "")
         if not email or not password:
-            logger.warning("stepstone.at: no credentials")
-            return False
+            if await self.check_already_logged_in(
+                "https://www.stepstone.at",
+                '[data-testid="header-user-menu"], .candidate-header-nav, a[href*="/mein-konto"]'
+            ):
+                logger.info("stepstone.at: already logged in via saved session")
+                return True
+            return await self.manual_login(self.LOGIN_URL)
 
         await self.page.goto(self.LOGIN_URL, wait_until="domcontentloaded")
         await self.delay()
@@ -113,6 +118,9 @@ class StepstoneAt(BaseSite):
         await self.page.wait_for_load_state("domcontentloaded")
         await self.delay()
         await self.wait_for_captcha()
+
+        if await self.try_external_apply("stepstone.at", job, cover_letter):
+            return True
 
         await self.upload_cv('input[type="file"][accept*="pdf"], input[name*="resume"], input[name*="cv"]')
         await self.delay()

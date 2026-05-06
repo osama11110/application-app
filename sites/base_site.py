@@ -102,7 +102,73 @@ class BaseSite(ABC):
                 continue
         return None
 
+    async def manual_login(self, login_url: str) -> bool:
+        """
+        No credentials configured — open the login page so the user can
+        log in manually. The session is saved to browser_profile/ and
+        reused automatically on every future run.
+        """
+        from colorama import Fore, Style
+        print(f"\n  {Fore.YELLOW}{'─'*54}")
+        print(f"  {self.name.upper()} — no credentials in config.yaml")
+        print(f"  Opening login page in the browser.")
+        print(f"  Log in manually, then come back here and press Enter.")
+        print(f"  Your session will be saved — you won't need to do")
+        print(f"  this again on future runs.")
+        print(f"  {'─'*54}{Style.RESET_ALL}")
+
+        await self.page.goto(login_url, wait_until="domcontentloaded")
+        await self.delay()
+        # Dismiss cookie banner so login form is visible
+        await self.safe_click(
+            'button:has-text("Akzeptieren"), button:has-text("Accept all"), '
+            'button:has-text("Alle akzeptieren"), [id*="cookie"] button, '
+            '[data-testid*="accept"]',
+            3000
+        )
+        input(f"\n  Press Enter once you are logged in to {self.name}... ")
+        print()
+        return True
+
+    async def check_already_logged_in(self, home_url: str, logged_in_selector: str) -> bool:
+        """
+        Visit the site home and check for a selector that only appears
+        when the user is logged in (e.g. profile avatar, dashboard link).
+        Uses the saved browser_profile session.
+        """
+        try:
+            await self.page.goto(home_url, wait_until="domcontentloaded")
+            await self.delay(0.5, 1.5)
+            el = await self.page.query_selector(logged_in_selector)
+            return el is not None
+        except Exception:
+            return False
+
     # ---------------------------------------------------------------- abstract
+    async def try_external_apply(self, home_domain: str, job: dict, cover_letter: str = "") -> bool:
+        """
+        Call this after clicking Apply on any site.
+        If the browser has redirected to a company career portal,
+        detect the ATS and apply automatically.
+        Returns True if an external application was handled.
+        """
+        from .ats import detect_ats, is_external, get_handler
+
+        current_url = self.page.url
+        if not is_external(home_domain, current_url):
+            return False  # Still on the same site — caller handles inline form
+
+        ats = detect_ats(current_url)
+        logger.info(f"External redirect detected → {ats} ({current_url[:70]})")
+        await self.screenshot(f"ats_{ats}")
+
+        handler = get_handler(ats)
+        try:
+            return await handler(self.page, job, self.cv_data, self.cv_path, cover_letter)
+        except Exception as e:
+            logger.error(f"ATS handler '{ats}' error: {e}")
+            return False
+
     @abstractmethod
     async def login(self) -> bool:
         pass

@@ -1,0 +1,33 @@
+2026-05-06 16:29:10,732 [INFO] cv_parser: Loading cached CV parse
+2026-05-06 16:29:12,889 [WARNING] main: playwright-stealth not installed — running without stealth
+2026-05-06 16:29:15,064 [INFO] sites.karriere_at: karriere.at: already logged in via saved session
+2026-05-06 16:29:36,702 [INFO] sites.karriere_at: karriere.at: found 63 jobs
+2026-05-06 16:29:37,954 [INFO] httpx: HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-06 16:29:38,910 [INFO] httpx: HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-06 16:29:46,695 [INFO] httpx: HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-06 16:29:53,246 [WARNING] sites.karriere_at: karriere.at: no apply button found for Software Entwickler (m/w/x)
+2026-05-06 16:29:54,002 [INFO] httpx: HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-06 16:30:02,567 [INFO] httpx: HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-06 16:30:07,578 [WARNING] sites.karriere_at: karriere.at: no apply button found for Senior Full Stack Software Developer (w/m/x)
+2026-05-06 16:30:08,605 [INFO] httpx: HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-06 16:30:10,167 [INFO] httpx: HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-06 16:30:10,904 [INFO] httpx: HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-06 16:30:18,833 [INFO] httpx: HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-06 16:30:18,845 [ERROR] main: apply_to_job error (Software Entwickler (w/m/d)): Page.goto: Target page, context or browser has been closed
+2026-05-06 16:30:19,789 [INFO] httpx: HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-06 16:30:20,821 [INFO] httpx: HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-06 16:30:22,030 [INFO] httpx: HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-06 16:30:30,830 [INFO] httpx: HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-06 16:30:30,841 [ERROR] main: apply_to_job error (Software Developer/Software Entwickler (m/w/x)): Page.goto: Target page, context or browser has been closed
+2026-05-06 16:30:31,691 [INFO] httpx: HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-06 16:30:32,465 [INFO] httpx: HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-06 16:30:40,658 [INFO] httpx: HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-06 16:30:40,667 [ERROR] main: apply_to_job error (Software Entwickler (m/w/d)): Page.goto: Target page, context or browser has been closed
+2026-05-06 16:30:41,476 [INFO] httpx: HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-06 16:30:49,873 [INFO] httpx: HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-06 16:30:49,883 [ERROR] main: apply_to_job error (Software Entwickler (m/w/d) für Energiemanagementsysteme): Page.goto: Target page, context or browser has been closed
+2026-05-06 16:30:51,204 [INFO] httpx: HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-06 16:30:59,193 [INFO] httpx: HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-06 16:30:59,198 [ERROR] main: apply_to_job error (Software Entwickler Testautomatisierung (w/m/x)): Page.goto: Target page, context or browser has been closed
+2026-05-06 16:31:00,278 [INFO] httpx: HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-06 16:31:08,718 [INFO] httpx: HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"

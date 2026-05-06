@@ -15,8 +15,13 @@ class WillhabenAt(BaseSite):
         email = self.creds.get("email", "")
         password = self.creds.get("password", "")
         if not email or not password:
-            logger.warning("willhaben: no credentials")
-            return False
+            if await self.check_already_logged_in(
+                "https://www.willhaben.at",
+                '[data-testid="header-profile-link"], [aria-label*="Profil"], a[href*="/meinkonto"]'
+            ):
+                logger.info("willhaben: already logged in via saved session")
+                return True
+            return await self.manual_login(self.LOGIN_URL)
 
         await self.page.goto(self.LOGIN_URL, wait_until="domcontentloaded")
         await self.delay()
@@ -109,6 +114,9 @@ class WillhabenAt(BaseSite):
 
         await self.page.wait_for_load_state("domcontentloaded")
         await self.delay()
+
+        if await self.try_external_apply("willhaben.at", job, cover_letter):
+            return True
 
         # willhaben contact form
         await self.safe_fill('textarea[name="message"], textarea[placeholder*="Nachricht"]',

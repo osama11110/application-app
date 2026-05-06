@@ -15,8 +15,13 @@ class Xing(BaseSite):
         email = self.creds.get("email", "")
         password = self.creds.get("password", "")
         if not email or not password:
-            logger.warning("xing: no credentials")
-            return False
+            if await self.check_already_logged_in(
+                "https://www.xing.com/jobs",
+                '[data-testid="header-profile-button"], .avatar-image, a[href*="/profile"]'
+            ):
+                logger.info("xing: already logged in via saved session")
+                return True
+            return await self.manual_login(self.LOGIN_URL)
 
         await self.page.goto(self.LOGIN_URL, wait_until="domcontentloaded")
         await self.delay()
@@ -116,6 +121,9 @@ class Xing(BaseSite):
         await self.page.wait_for_load_state("domcontentloaded")
         await self.delay()
         await self.wait_for_captcha()
+
+        if await self.try_external_apply("xing.com", job, cover_letter):
+            return True
 
         await self.upload_cv('input[type="file"]')
         await self.delay()

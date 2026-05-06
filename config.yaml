@@ -41,6 +41,10 @@ credentials:
     email: ""
     password: ""
     enabled: false
+  devjobs_at:
+    email: ""
+    password: ""
+    enabled: true   # applies as guest if no account — no login required
 
 search:
   location: "Austria"

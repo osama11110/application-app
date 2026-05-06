@@ -15,8 +15,13 @@ class LinkedIn(BaseSite):
         email = self.creds.get("email", "")
         password = self.creds.get("password", "")
         if not email or not password:
-            logger.warning("LinkedIn: no credentials configured")
-            return False
+            if await self.check_already_logged_in(
+                "https://www.linkedin.com/feed",
+                '.global-nav__me-photo, [data-control-name="identity_welcome_message"]'
+            ):
+                logger.info("LinkedIn: already logged in via saved session")
+                return True
+            return await self.manual_login(self.LOGIN_URL)
 
         await self.page.goto(self.LOGIN_URL, wait_until="domcontentloaded")
         await self.delay()
@@ -124,6 +129,10 @@ class LinkedIn(BaseSite):
             return False
 
         await self.delay(1, 2)
+
+        # If LinkedIn redirected externally (non-Easy Apply job)
+        if await self.try_external_apply("linkedin.com", job, cover_letter):
+            return True
 
         # Walk through multi-step Easy Apply modal
         for step in range(8):

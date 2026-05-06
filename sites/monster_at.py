@@ -15,8 +15,13 @@ class MonsterAt(BaseSite):
         email = self.creds.get("email", "")
         password = self.creds.get("password", "")
         if not email or not password:
-            logger.warning("monster.at: no credentials")
-            return False
+            if await self.check_already_logged_in(
+                "https://www.monster.at",
+                '.account-nav, [class*="loggedIn"], a[href*="/profil"]'
+            ):
+                logger.info("monster.at: already logged in via saved session")
+                return True
+            return await self.manual_login(self.LOGIN_URL)
 
         await self.page.goto(self.LOGIN_URL, wait_until="domcontentloaded")
         await self.delay()
@@ -113,6 +118,9 @@ class MonsterAt(BaseSite):
         await self.page.wait_for_load_state("domcontentloaded")
         await self.delay()
         await self.wait_for_captcha()
+
+        if await self.try_external_apply("monster.at", job, cover_letter):
+            return True
 
         await self.upload_cv('input[type="file"]')
         await self.delay()
